@@ -1,0 +1,17 @@
+<form method="POST" style="display: flex; flex-direction: column; gap: 8px; max-width:400px">
+  <label>Text: <textarea name="text" rows="5" cols="40"></textarea></label>
+  <button type="submit">Create</button>
+</form>
+
+<main>
+  {% for post in posts %}
+    <article>
+      <h2>{{ post.id }}</h2>
+      <p>{{ post.text|safe }}</p>
+    </article>
+  {% else %}
+    <p>No posts available</p>
+  {% endfor %}
+</main>
+
+
